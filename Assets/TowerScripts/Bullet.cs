@@ -42,6 +42,6 @@ public class Bullet : MonoBehaviour
         Destroy(target.gameObject);
         Destroy(gameObject);
         Destroy(effectins, 2f);
-        Debug.Log("We hit something and destroyed it!");
+        //Debug.Log("We hit something and destroyed it!");
     }
 }
