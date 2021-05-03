@@ -277,5 +277,5 @@ MonoBehaviour:
   enemyTag: Enemy
   RotateTurret: {fileID: 2428585417693878808}
   turnspeed: 10
-  bulletPrefab: {fileID: 446803443711773635}
-  firePoint: {fileID: 7173620346837601168, guid: df032969efbdcdd4f967301d23238759, type: 3}
+  bulletPrefab: {fileID: 6822689188833879955, guid: 4b987e876cd152749b829315d8400d52, type: 3}
+  firePoint: {fileID: 7198201980029318766}
