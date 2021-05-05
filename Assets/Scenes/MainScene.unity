@@ -4315,6 +4315,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54a5f6e9df60b4541985db14934ee2b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  standardTurret:
+    prefab: {fileID: 3277868523158590553, guid: ddb75a4baed888544b5da6ba95fe9926, type: 3}
+    cost: 110
+  missileLauncher:
+    prefab: {fileID: 6723396445784016999, guid: 6c13cef7878ab9440b8f57f53e1bb20f, type: 3}
+    cost: 230
 --- !u!1001 &642638058
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13509,6 +13515,14 @@ PrefabInstance:
     - target: {fileID: 1973877470617706254, guid: 4412a0126dbf33b499d3940c2542ed07, type: 3}
       propertyPath: m_ChildAlignment
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1973877470617706255, guid: 4412a0126dbf33b499d3940c2542ed07, type: 3}
+      propertyPath: standardTurret.cost
+      value: 110
+      objectReference: {fileID: 0}
+    - target: {fileID: 1973877470617706255, guid: 4412a0126dbf33b499d3940c2542ed07, type: 3}
+      propertyPath: missileLauncher.cost
+      value: 230
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4412a0126dbf33b499d3940c2542ed07, type: 3}
