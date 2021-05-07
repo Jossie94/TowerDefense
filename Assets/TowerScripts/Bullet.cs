@@ -6,6 +6,8 @@ public class Bullet : MonoBehaviour
 {
     private Transform target;
 
+    public int damage = 20;
+
     public float speed = 70f;
 
     public GameObject impacteffect;
@@ -72,6 +74,13 @@ public class Bullet : MonoBehaviour
 
     void Damage (Transform enemy)
     {
+        EnemyMovement e = enemy.GetComponent<EnemyMovement>();
+
+        if (e != null)
+        {
+            e.TakeDamage(damage);
+        }
+
         Destroy(enemy.gameObject);
     }
 

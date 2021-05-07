@@ -6,6 +6,8 @@ public class EnemyMovement : MonoBehaviour
 {
     public float speed = 10f;
 
+    public int enenmyhealth = 100;
+
     private Transform target;
 
     private int wavepointIndex = 0;
@@ -13,6 +15,20 @@ public class EnemyMovement : MonoBehaviour
     void Start()
     {
         target = Waypoints.points[0];
+    }
+
+    public void TakeDamage(int amount)
+    {
+        enenmyhealth -= amount;
+        if (enenmyhealth <= 0)
+        {
+            Annilhiate();
+        }
+    }
+
+    void Annilhiate ()
+    {
+        Destroy(gameObject);
     }
 
     void Update()
@@ -30,10 +46,17 @@ public class EnemyMovement : MonoBehaviour
     {
         if (wavepointIndex >= Waypoints.points.Length -1)
         {
-            Destroy(gameObject);
+
+            EndPath();
             return;
         }
         wavepointIndex++;
         target = Waypoints.points[wavepointIndex];
+    }
+
+    void EndPath ()
+    {
+        PlayerStats.Lives--;
+        Destroy(gameObject);
     }
 }
