@@ -6,21 +6,26 @@ public class EnemyMovement : MonoBehaviour
 {
     public float speed = 10f;
 
-    public int enenmyhealth = 100;
+    public int starthealth = 100;
+
+    private float health;
 
     private Transform target;
 
     private int wavepointIndex = 0;
 
+    public int value = 50;
+
     void Start()
     {
         target = Waypoints.points[0];
+        health = starthealth;
     }
 
     public void TakeDamage(int amount)
     {
-        enenmyhealth -= amount;
-        if (enenmyhealth <= 0)
+        health -= amount;
+        if (health <= 0)
         {
             Annilhiate();
         }
@@ -28,6 +33,7 @@ public class EnemyMovement : MonoBehaviour
 
     void Annilhiate ()
     {
+        PlayerStats.Money += value;
         Destroy(gameObject);
     }
 

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1ba62d031d8b4dc41a96778b989bb038
+guid: 20200d471a9950549bb21c5adae9f7d4
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
@@ -8,27 +8,27 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Bolts
-    second: {fileID: 2100000, guid: a8a029b4b74d05549b38ab310e0dba83, type: 2}
+    second: {fileID: 2100000, guid: cb3e564c268e57e49a0c5f99a31dd8e2, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Main Turret
-    second: {fileID: 2100000, guid: fe81527eb3090c142a193fc5eef74a14, type: 2}
+    second: {fileID: 2100000, guid: 2004cc61b58598e4ca29942c75a9be71, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Pipe
-    second: {fileID: 2100000, guid: 6c69464d3e8c4d749b1db81c4224f059, type: 2}
+    second: {fileID: 2100000, guid: 448cdfe2e3689aa40b6863cce9beb4c0, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Stand
-    second: {fileID: 2100000, guid: dcc933f5cd83335479cfb8c5ac249edc, type: 2}
+    second: {fileID: 2100000, guid: f0c5eb4869e2c6148a990a0bcef60fd8, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Turret Accent
-    second: {fileID: 2100000, guid: 0610eaa093a672441b77c99a688f5451, type: 2}
+    second: {fileID: 2100000, guid: b2ce08e01ff88e14eb482e9c15450f7c, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -59,7 +59,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 2
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -91,7 +91,7 @@ ModelImporter:
     useFileScale: 1
   tangentSpace:
     normalSmoothAngle: 60
-    normalImportMode: 1
+    normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
@@ -110,7 +110,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 2
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 1
