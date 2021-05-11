@@ -14,6 +14,11 @@ public class Turret : MonoBehaviour
 
     public float fireCountdown = 0f;
 
+    [Header("use laser")]
+    public bool useLaser = false;
+
+    public LineRenderer lineRenderer;
+
     [Header("Unity Setup Fields")]
 
     public string enemyTag = "Enemy";
@@ -72,21 +77,38 @@ public class Turret : MonoBehaviour
     {
         if (target == null)
             return;
-        
-            
 
-            Vector3 direction = target.position - transform.position;
-            Quaternion lookRotation = Quaternion.LookRotation(direction);
-            Vector3 rotation = Quaternion.Lerp(RotateTurret.rotation, lookRotation, Time.deltaTime * turnspeed).eulerAngles;
-            RotateTurret.rotation = Quaternion.Euler (0f, rotation.y, 0f);
+        LockOnTarget();
 
-        if (fireCountdown <= 0f)
+        if(useLaser)
         {
-            Shoot();
-            fireCountdown = 1f / fireRate;
+            Laser();
+        }
+        else
+        {
+            if (fireCountdown <= 0f)
+            {
+                Shoot();
+                fireCountdown = 1f / fireRate;
+            }
+
+            fireCountdown -= Time.deltaTime;
         }
 
-        fireCountdown -= Time.deltaTime;
+        
+    }
+
+    void LockOnTarget ()
+    {
+        Vector3 direction = target.position - transform.position;
+        Quaternion lookRotation = Quaternion.LookRotation(direction);
+        Vector3 rotation = Quaternion.Lerp(RotateTurret.rotation, lookRotation, Time.deltaTime * turnspeed).eulerAngles;
+        RotateTurret.rotation = Quaternion.Euler (0f, rotation.y, 0f);
+    }
+
+    void Laser()
+    {
+
     }
 
     void Shoot()
