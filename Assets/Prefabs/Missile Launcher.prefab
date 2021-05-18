@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 446803443711773635}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 1.35}
+  m_LocalPosition: {x: 0, y: 1, z: -0.72}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2428585417693878808}
@@ -56,11 +56,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2096878118939492006}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 6198534041531372253}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &893439610097464153
 MeshFilter:
@@ -135,15 +135,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5874351756420543749}
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7198201980029318766}
   - {fileID: 4593257799772183113}
   m_Father: {fileID: 6198534041531372253}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6682146314632763248
 GameObject:
   m_ObjectHideFlags: 0
@@ -254,8 +254,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0.45, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1104170862995688687}
   - {fileID: 2428585417693878808}
+  - {fileID: 1104170862995688687}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -274,8 +274,10 @@ MonoBehaviour:
   range: 30
   fireRate: 1
   fireCountdown: 0
+  bulletPrefab: {fileID: 6822689188833879955, guid: 4b987e876cd152749b829315d8400d52, type: 3}
+  useLaser: 0
+  lineRenderer: {fileID: 0}
   enemyTag: Enemy
   RotateTurret: {fileID: 2428585417693878808}
   turnspeed: 10
-  bulletPrefab: {fileID: 6822689188833879955, guid: 4b987e876cd152749b829315d8400d52, type: 3}
   firePoint: {fileID: 7198201980029318766}

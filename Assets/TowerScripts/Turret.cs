@@ -6,6 +6,8 @@ public class Turret : MonoBehaviour
 {
     private Transform target;
 
+    private EnemyMovement targetEnemy;
+
     [Header("Attributes")]
 
     public float range = 15f;
@@ -14,10 +16,17 @@ public class Turret : MonoBehaviour
 
     public float fireCountdown = 0f;
 
-    [Header("use laser")]
+    public GameObject bulletPrefab;
+
+
+    [Header("Use laser")]
     public bool useLaser = false;
 
     public LineRenderer lineRenderer;
+
+    //public Light impactLight;
+
+    //public ParticleSystem impactEffect;
 
     [Header("Unity Setup Fields")]
 
@@ -27,8 +36,7 @@ public class Turret : MonoBehaviour
 
     public float turnspeed = 10f;
 
-    public GameObject bulletPrefab;
-
+   
     public Transform firePoint;
 
 
@@ -63,6 +71,7 @@ public class Turret : MonoBehaviour
         if (closestenemy != null && shortestDistance <= range)
         {
             target = closestenemy.transform;
+            targetEnemy = closestenemy.GetComponent<EnemyMovement>();
         }
 
         else
@@ -76,14 +85,30 @@ public class Turret : MonoBehaviour
     void Update()
     {
         if (target == null)
+        {
+
+            if (useLaser)
+            {
+                if (lineRenderer.enabled)
+                {
+                    lineRenderer.enabled = false;
+                   // impactEffect.Stop();
+                    //impactLight.enabled = false;
+                }
+            }
+
             return;
+
+        }
+            
 
         LockOnTarget();
 
-        if(useLaser)
+        if (useLaser)
         {
             Laser();
         }
+
         else
         {
             if (fireCountdown <= 0f)
@@ -109,6 +134,22 @@ public class Turret : MonoBehaviour
     void Laser()
     {
 
+
+        if (!lineRenderer.enabled)
+        {
+            lineRenderer.enabled = true;
+            //impactEffect.Play
+            //impactLight.enabled = true;
+        }
+        lineRenderer.SetPosition(0, firePoint.position);
+        lineRenderer.SetPosition(1, target.position);
+
+
+        Vector3 direction = firePoint.position - target.position;
+
+        //impactEffect.transform.position = target.position + direction.normalized;
+
+        //impactEffect.transform.rotation = Quaternion.LookRotation(direction);
     }
 
     void Shoot()
@@ -118,9 +159,9 @@ public class Turret : MonoBehaviour
         Bullet bullet = bulletboom.GetComponent<Bullet>();
 
         if (bullet != null)
-        {
+        
             bullet.SearchTarget(target);
-        }
+        
     }
 
     void OnDrawGizmosSelected()
