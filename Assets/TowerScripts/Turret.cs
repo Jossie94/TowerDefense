@@ -26,7 +26,7 @@ public class Turret : MonoBehaviour
 
     //public Light impactLight;
 
-    //public ParticleSystem impactEffect;
+    public ParticleSystem impactEffect;
 
     [Header("Unity Setup Fields")]
 
@@ -91,8 +91,8 @@ public class Turret : MonoBehaviour
             {
                 if (lineRenderer.enabled)
                 {
-                    lineRenderer.enabled = false;
-                   // impactEffect.Stop();
+                   lineRenderer.enabled = false;
+                   impactEffect.Stop();
                     //impactLight.enabled = false;
                 }
             }
@@ -128,7 +128,7 @@ public class Turret : MonoBehaviour
         Vector3 direction = target.position - transform.position;
         Quaternion lookRotation = Quaternion.LookRotation(direction);
         Vector3 rotation = Quaternion.Lerp(RotateTurret.rotation, lookRotation, Time.deltaTime * turnspeed).eulerAngles;
-        RotateTurret.rotation = Quaternion.Euler (0f, rotation.y, 0f);
+        RotateTurret.rotation = Quaternion.Euler(0f, rotation.y, 0f);
     }
 
     void Laser()
@@ -138,7 +138,7 @@ public class Turret : MonoBehaviour
         if (!lineRenderer.enabled)
         {
             lineRenderer.enabled = true;
-            //impactEffect.Play
+            impactEffect.Play();
             //impactLight.enabled = true;
         }
         lineRenderer.SetPosition(0, firePoint.position);
@@ -147,9 +147,9 @@ public class Turret : MonoBehaviour
 
         Vector3 direction = firePoint.position - target.position;
 
-        //impactEffect.transform.position = target.position + direction.normalized;
+        impactEffect.transform.position = target.position + direction.normalized;
 
-        //impactEffect.transform.rotation = Quaternion.LookRotation(direction);
+        impactEffect.transform.rotation = Quaternion.LookRotation(direction);
     }
 
     void Shoot()
