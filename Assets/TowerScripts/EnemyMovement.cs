@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    public float speed = 10f;
+    public float startSpeed = 10f;
+
+    public float speed;
 
     public int starthealth = 100;
 
-    private float health;
+    private float health = 100;
 
     private Transform target;
 
@@ -16,19 +18,28 @@ public class EnemyMovement : MonoBehaviour
 
     public int value = 50;
 
+    public GameObject deathEffect;
+
+
+
     void Start()
     {
         target = Waypoints.points[0];
         health = starthealth;
     }
 
-    public void TakeDamage(int amount)
+    public void TakeDamage(float amount)
     {
         health -= amount;
         if (health <= 0)
         {
             Annilhiate();
         }
+    }
+
+    public void Slow (float pct)
+    {
+        speed = startSpeed * (1f - pct);
     }
 
     void Annilhiate ()

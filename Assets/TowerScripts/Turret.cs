@@ -24,9 +24,13 @@ public class Turret : MonoBehaviour
 
     public LineRenderer lineRenderer;
 
-    //public Light impactLight;
+    public Light impactLight;
 
     public ParticleSystem impactEffect;
+
+    public int damageovertime = 30;
+
+    public float slowamount = .5f;
 
     [Header("Unity Setup Fields")]
 
@@ -93,7 +97,7 @@ public class Turret : MonoBehaviour
                 {
                    lineRenderer.enabled = false;
                    impactEffect.Stop();
-                    //impactLight.enabled = false;
+                   impactLight.enabled = false;
                 }
             }
 
@@ -133,13 +137,14 @@ public class Turret : MonoBehaviour
 
     void Laser()
     {
-
+        targetEnemy.TakeDamage(damageovertime * Time.deltaTime);
+        targetEnemy.Slow(slowamount);
 
         if (!lineRenderer.enabled)
         {
             lineRenderer.enabled = true;
             impactEffect.Play();
-            //impactLight.enabled = true;
+            impactLight.enabled = true;
         }
         lineRenderer.SetPosition(0, firePoint.position);
         lineRenderer.SetPosition(1, target.position);

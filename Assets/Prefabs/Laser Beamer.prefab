@@ -106,7 +106,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2480657026899178634}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.73, y: 0.97, z: 2.66}
+  m_LocalPosition: {x: 0.63, y: 0.73, z: 0.76}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5695585996832027861}
@@ -197,6 +197,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 0}
   useLaser: 1
   lineRenderer: {fileID: 4873821454861475873}
+  impactLight: {fileID: 5691850978600621530}
   impactEffect: {fileID: 4477627137358785506}
   enemyTag: Enemy
   RotateTurret: {fileID: 5695585996832027861}
@@ -252,8 +253,8 @@ LineRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0
-        value: 1
+        time: 0.02590561
+        value: 0.24855423
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -456,5 +457,10 @@ Transform:
 --- !u!198 &4477627137358785506 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 5041488876187929124, guid: af8b9917087c9e245b517db6126fd026, type: 3}
+  m_PrefabInstance: {fileID: 8923123192947057094}
+  m_PrefabAsset: {fileID: 0}
+--- !u!108 &5691850978600621530 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 3830532530136396828, guid: af8b9917087c9e245b517db6126fd026, type: 3}
   m_PrefabInstance: {fileID: 8923123192947057094}
   m_PrefabAsset: {fileID: 0}
