@@ -29,6 +29,8 @@ public class BuildManager : MonoBehaviour
 
     private TurretBlueprint turretToBuild;
 
+    private Node selectedNode;
+
     public bool CanBuild { get { return turretToBuild != null; } }
 
     public bool HasMoney { get { return PlayerStats.Money >= turretToBuild.cost; } }
@@ -55,8 +57,18 @@ public class BuildManager : MonoBehaviour
         //turret = (GameObject)Instantiate(turretToBuild, transform.position + positionOffset, transform.rotation);
     }
 
+    public void SelectNode (Node node)
+    {
+        selectedNode = node;
+        turretToBuild = null;
+
+        nodeUI.SetTarget(node);
+    }
+
+
    public void SelectTurretToBuild (TurretBlueprint turret)
     {
         turretToBuild = turret;
+        selectedNode = null;
     }
 }

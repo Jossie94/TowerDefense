@@ -14,11 +14,15 @@ public class PlayerStats : MonoBehaviour
 
     public int startLives = 20;
 
+    public static int Rounds = 0;
+
 
     public void Start()
     {
         Money = startMoney;
         Lives = startLives;
+
+        Rounds = 0;
     }
 
 }
