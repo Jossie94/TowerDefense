@@ -5472,12 +5472,18 @@ MonoBehaviour:
   standardTurret:
     prefab: {fileID: 3277868523158590553, guid: ddb75a4baed888544b5da6ba95fe9926, type: 3}
     cost: 100
+    upgradedPrefab: {fileID: 3277868523158590553, guid: a6219c61d9c2f4e44a8dc7e5756d3433, type: 3}
+    upgradeCost: 50
   missileLauncher:
     prefab: {fileID: 6723396445784016999, guid: 6c13cef7878ab9440b8f57f53e1bb20f, type: 3}
     cost: 200
+    upgradedPrefab: {fileID: 0}
+    upgradeCost: 50
   laserbeamer:
     prefab: {fileID: 4761664564464584470, guid: 4b44733902b53654ea1e9b98ebf20159, type: 3}
     cost: 300
+    upgradedPrefab: {fileID: 0}
+    upgradeCost: 50
 --- !u!1001 &642638058
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7403,10 +7409,10 @@ RectTransform:
   m_Father: {fileID: 304688489}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -0.364, y: 0.313, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 58.234272, y: -34.64773}
+  m_SizeDelta: {x: 67.02066, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &904540465
 MonoBehaviour:
@@ -7451,7 +7457,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 904540466}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1784838543}
+        m_TargetAssemblyTypeName: NodeUI, Assembly-CSharp
+        m_MethodName: Uprade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &904540466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10572,10 +10590,10 @@ RectTransform:
   m_Father: {fileID: 304688489}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: -1.068, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 163.23428, y: -34.95551}
+  m_SizeDelta: {x: 67.02066, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1314101864
 MonoBehaviour:
@@ -11601,13 +11619,15 @@ GameObject:
   - component: {fileID: 1451896973}
   - component: {fileID: 1451896972}
   - component: {fileID: 1451896971}
+  - component: {fileID: 1451896975}
+  - component: {fileID: 1451896974}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1451896970
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11690,6 +11710,37 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!95 &1451896974
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1451896969}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0c4cc9d4cf47b3e4eb7ff7150bbc6d90, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!225 &1451896975
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1451896969}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1465133495
 GameObject:
   m_ObjectHideFlags: 0
@@ -11917,7 +11968,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'UPGRADE
 
-    100 $'
+    50 $'
 --- !u!222 &1520228504
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13796,9 +13847,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1784838541}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dfee8538d579d4c4e879f1eff9db3dc3, type: 3}
+  m_Script: {fileID: 11500000, guid: 15d582fabb13e9d448b336d6303c5d7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ui: {fileID: 1451896969}
 --- !u!1001 &1793004429
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14168,7 +14220,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1812703108}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
   m_Name: 
@@ -15945,6 +15997,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buildEffect: {fileID: 9038088644325411759, guid: 82d46d22cafbdb0488b8c6a102732ab2, type: 3}
+  nodeUI: {fileID: 1784838543}
 --- !u!114 &2024568473
 MonoBehaviour:
   m_ObjectHideFlags: 0
