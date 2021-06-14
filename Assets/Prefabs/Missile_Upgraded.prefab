@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 1731894244117666191}
   - component: {fileID: 4564907669042781393}
   m_Layer: 0
-  m_Name: Missile
+  m_Name: Missile_Upgraded
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62d67cc80d0cbbb43a3cf868e69f8154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 40
-  speed: 20
-  impacteffect: {fileID: 8976366279757255709, guid: 1df86973cdd2fc54ba3117d711631872, type: 3}
+  damage: 50
+  speed: 30
+  impacteffect: {fileID: 8976366279757255709, guid: 785aa6e9accd28047ba2e730e15ba6b4, type: 3}
   explosionRadius: 7
