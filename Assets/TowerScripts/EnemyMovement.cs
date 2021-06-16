@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyMovement : MonoBehaviour
 {
@@ -20,6 +21,8 @@ public class EnemyMovement : MonoBehaviour
 
     public GameObject deathEffect;
 
+    public Image healthBar;
+
 
 
     void Start()
@@ -31,6 +34,9 @@ public class EnemyMovement : MonoBehaviour
     public void TakeDamage(float amount)
     {
         health -= amount;
+
+        healthBar.fillAmount = health/starthealth;
+
         if (health <= 0)
         {
             Annilhiate();
@@ -45,6 +51,9 @@ public class EnemyMovement : MonoBehaviour
     void Annilhiate ()
     {
         PlayerStats.Money += value;
+
+        WaveSpawner.EnemiesAlive--;
+
         Destroy(gameObject);
     }
 
@@ -74,6 +83,7 @@ public class EnemyMovement : MonoBehaviour
     void EndPath ()
     {
         PlayerStats.Lives--;
+        WaveSpawner.EnemiesAlive--;
         Destroy(gameObject);
     }
 }
