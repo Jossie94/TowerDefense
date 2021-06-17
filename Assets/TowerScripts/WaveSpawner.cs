@@ -59,6 +59,12 @@ public class WaveSpawner : MonoBehaviour
         }
         waveNumber++;
 
+        if(waveNumber == waves.Length)
+        {
+            Debug.Log("LEVEL COMPLETE!");
+            this.enabled = false;
+        }
+
         //Debug.Log("Wave Incoming!");
     }
 

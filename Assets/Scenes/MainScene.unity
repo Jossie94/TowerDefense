@@ -16793,12 +16793,12 @@ MonoBehaviour:
   - enemy: {fileID: 4480123707319078233, guid: ce35c1ca2e640fd48ad4873dec6b90a4, type: 3}
     count: 5
     rate: 2
-  - enemy: {fileID: 4480123707319078233, guid: ce35c1ca2e640fd48ad4873dec6b90a4, type: 3}
-    count: 0
-    rate: 0
-  - enemy: {fileID: 4480123707319078233, guid: ce35c1ca2e640fd48ad4873dec6b90a4, type: 3}
-    count: 0
-    rate: 0
+  - enemy: {fileID: 4480123707319078233, guid: 4d5ea274371449042aa317f994436478, type: 3}
+    count: 3
+    rate: 1
+  - enemy: {fileID: 4480123707319078233, guid: 7643f5ac6a62aaa4bb8e238a44013bd8, type: 3}
+    count: 10
+    rate: 3
 --- !u!4 &2024568471
 Transform:
   m_ObjectHideFlags: 0
